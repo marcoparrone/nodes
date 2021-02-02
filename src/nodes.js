@@ -9,7 +9,7 @@
 //
 // The "nodes" parameter is always an array of nodes.
 //
-// The "cursor" parameter is a string and has this format: N1.N2.N3, for example 2.3.5 means the 5th children of the 3rd children of the 2nd element.
+// The "cursor" parameter is a string and has this format: N1.N2.N3, for example 2.3.5 means the 6th children of the 4th children of the 3rd element.
 
 import saveAs from 'file-saver';
 
