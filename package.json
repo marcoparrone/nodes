@@ -1,0 +1,30 @@
+{
+  "name": "@marcoparrone/nodes",
+  "version": "1.0.0",
+  "description": "Implementation of nodes of a tree structure where the nodes are either folders or final nodes.",
+  "main": "src/nodes.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcoparrone/nodes.git"
+  },
+  "keywords": [
+    "nodes",
+    "tree",
+    "structure",
+    "folder",
+    "document",
+    "json"
+  ],
+  "author": "Marco Parrone",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/marcoparrone/nodes/issues"
+  },
+  "homepage": "https://github.com/marcoparrone/nodes#readme",
+  "dependencies": {
+    "file-saver": "^2.0.5"
+  }
+}
