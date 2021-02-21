@@ -379,7 +379,9 @@ function export_nodes(nodes, name) {
 //
 // call_on_success is a callback function to call when the nodes are imported successfully.
 //
-function import_nodes(nodes, evt, fields_to_check, text_error_loadfile, text_error_fileformat, call_on_success) {
+// If merge is true, then the new nodes will be added to the old nodes, else the new nodes will replace the old nodes.
+//
+function import_nodes(nodes, evt, fields_to_check, text_error_loadfile, text_error_fileformat, call_on_success, merge) {
   let file = evt.target.files[0];
   if (!file) {
     if (evt.target.files.length > 0) {
@@ -401,11 +403,18 @@ function import_nodes(nodes, evt, fields_to_check, text_error_loadfile, text_err
         alert(text_error_fileformat);
       }
       if (missingFields === false && newnodes.length > 0) {
-        // Delete extra entries in the old nodes.
-        nodes.splice(newnodes.length - 1);
-        // Overwrite old nodes with new nodes.
-        for (let i = 0; i < newnodes.length; i++) {
-          nodes[i] = newnodes[i];
+        if (merge) {
+          // Add the imported nodes to the old nodes.
+          for (let i = 0; i < newnodes.length; i++) {
+            nodes.push(newnodes[i]);
+          }
+        } else {
+          // Delete extra entries in the old nodes.
+          nodes.splice(newnodes.length - 1);
+          // Overwrite old nodes with new nodes.
+          for (let i = 0; i < newnodes.length; i++) {
+            nodes[i] = newnodes[i];
+          }
         }
         // Call the callback function.
         if (call_on_success) {
