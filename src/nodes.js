@@ -352,7 +352,7 @@ function export_nodes(nodes, name) {
   // Return a timestamp.
   const timestamp = () => {
     let dt = new Date();
-    return dt.getFullYear() + pad2(dt.getMonth()) + pad2(dt.getDay()) + 'T' + pad2(dt.getHours()) + pad2(dt.getMinutes()) + pad2(dt.getSeconds());
+    return dt.getFullYear() + pad2(dt.getMonth() + 1) + pad2(dt.getDate()) + 'T' + pad2(dt.getHours()) + pad2(dt.getMinutes()) + pad2(dt.getSeconds());
   }
   // Export to JSON file, skipping deleted nodes.
   for (let i = 0; i < nodes.length; i++) {

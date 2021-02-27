@@ -1,6 +1,6 @@
 {
   "name": "@marcoparrone/nodes",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Implementation of nodes of a tree structure where the nodes are either folders or final nodes.",
   "main": "src/nodes.js",
   "scripts": {
